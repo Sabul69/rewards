@@ -19,6 +19,9 @@ dependencies:
   sort-by:
     specifier: ^1.2.0
     version: 1.2.0
+  validator:
+    specifier: ^13.9.0
+    version: 13.9.0
 
 devDependencies:
   '@types/react':
@@ -1735,6 +1738,11 @@ packages:
     dependencies:
       punycode: 2.3.0
     dev: true
+
+  /validator@13.9.0:
+    resolution: {integrity: sha512-B+dGG8U3fdtM0/aNK4/X8CXq/EcxU2WPrPEkJGslb47qyHsxmbggTWK0yEA4qnYVNF+nxNlN88o14hIcPmSIEA==}
+    engines: {node: '>= 0.10'}
+    dev: false
 
   /vite@4.3.2:
     resolution: {integrity: sha512-9R53Mf+TBoXCYejcL+qFbZde+eZveQLDYd9XgULILLC1a5ZwPaqgmdVpL8/uvw2BM/1TzetWjglwm+3RO+xTyw==}

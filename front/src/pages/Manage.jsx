@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Card from "../components/Card";
+import validator from "validator";
 
 const Manage = () => {
   const [reward, setReward] = useState({ category: "Cat1" });
@@ -11,10 +12,18 @@ const Manage = () => {
     const url =
       "https://awojwcsa3vf5t2vmaxmsrcimja0sxpxo.lambda-url.us-east-1.on.aws/";
     e.preventDefault();
-    console.log(reward);
+    const sanitized = {};
+    for (const key in reward) {
+      if (key !== "img") {
+        sanitized[key] = validator.escape(reward[key]);
+      } else {
+        sanitized[key] = reward[key];
+      }
+    }
+
     const rawResponse = await fetch(url, {
       method: "POST",
-      body: JSON.stringify(reward),
+      body: JSON.stringify(sanitized),
     });
     const { response } = await rawResponse.json();
     if (response?.insertedId) {

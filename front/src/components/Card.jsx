@@ -23,7 +23,7 @@ const Card = ({ card, manage, setReload }) => {
       </p>
       <img className="img" src={card.img} alt={card.name} />
       <b>Description</b>
-      <p>{card.description}</p>
+      <p className="desc">{card.description}</p>
       <p>
         <b>Price: $</b>
         {card.price}

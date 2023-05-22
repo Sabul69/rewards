@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
+import validator from "validator";
 
 const Login = ({ isLoggedIn, setCheck }) => {
   const [log, setLog] = useState(null);
@@ -12,12 +13,16 @@ const Login = ({ isLoggedIn, setCheck }) => {
   };
 
   const handleSubmit = async (e) => {
+    let sanitized = {
+      password: validator.escape(credentials.password),
+      email: validator.escape(credentials.email),
+    };
     e.preventDefault();
     const url =
       "https://254ek2g4ijh2oukmrysa2e4gju0blomb.lambda-url.us-east-1.on.aws/";
     const rawResponse = await fetch(url, {
       method: "POST",
-      body: JSON.stringify(credentials),
+      body: JSON.stringify(sanitized),
     });
     const content = await rawResponse.json();
     if (content.accessToken) {

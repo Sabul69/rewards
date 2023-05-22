@@ -223,9 +223,9 @@ h1 {
 }
 .card {
   width: 18rem;
-  height: 23rem;
+  height: 28rem;
   border-radius: 0.3rem;
-  padding: 1rem;
+  padding: 1.3rem;
   -webkit-box-shadow: 7px 13px 25px -1px rgba(95, 97, 95, 1);
   -moz-box-shadow: 7px 13px 25px -1px rgba(95, 97, 95, 1);
   box-shadow: 7px 13px 25px -1px rgba(95, 97, 95, 1);
@@ -235,6 +235,11 @@ h1 {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.desc {
+  font-size: 0.8rem;
 }
 
 .img {
